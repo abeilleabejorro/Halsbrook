@@ -1,5 +1,5 @@
-  #Opens result.txt, gets the numbers, assigns them to an array
-  array_of_random_numbers = File.read("result.txt").split("\n").map {|number| number.to_i}
+  #Opens rubyresult.txt, gets the numbers, assigns them to an array
+  array_of_random_numbers = File.read("rubyresult.txt").split("\n").map {|number| number.to_i}
 
   #sorts the array
   array_of_random_numbers.sort!
@@ -9,7 +9,7 @@
   min = array_of_random_numbers.min
 
   #creates and opens sorted.txt
-  file2 = File.open("sorted.txt", "w")
+  file2 = File.open("rubysorted.txt", "w")
 
   #writes the max/min and sorted numbers to the file
   file2.puts "Maximum is #{max}"

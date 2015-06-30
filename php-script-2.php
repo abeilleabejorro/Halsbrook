@@ -1,8 +1,3 @@
-<!-- The Test:
-
-Please build another PHP script that reads the above file "result.txt" and outputs the minimum and maximum numbers, sorts the list and then save it in a file called "sorted.txt".
- -->
-
 <?php
     
     //open phpresult.txt for reading
@@ -10,7 +5,7 @@ Please build another PHP script that reads the above file "result.txt" and outpu
 
     //turn results string into an integer array by line-break
     $random_numbers_array = array_map('intval', explode("\n", $random_numbers_file));
-    //gets rid of spare element
+    //gets rid of spare element caused by extra linebreak
     array_pop($random_numbers_array);
 
     //finds min and max value of the array
@@ -31,22 +26,3 @@ Please build another PHP script that reads the above file "result.txt" and outpu
     fclose($fileoutput);
 
 ?>
-
-
-
-
-<!--  *reads above file phpresult.txt
- *outputs the min, max, sorts list, saves in file called "sorted.txt"
-
-
-  $my_random_numbers_for_file = GenerateRandomNumbers();
-
-  foreach ($my_random_numbers_for_file as $randoms) {
-    fwrite($outputfile, $randoms . "\n");
-  }
-
-  fclose($outputfile);
-
-
-
- -->

@@ -1,3 +1,5 @@
+<!-- PHP script version of challenge -->
+
 <?php
 
   // generates 10 random numbers
