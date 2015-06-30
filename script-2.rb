@@ -1,33 +1,22 @@
-require_relative 'code-challenge-script-1.rb'
-require 'pry'
-# The Test:
+  #Opens result.txt, gets the numbers, assigns them to an array
+  array_of_random_numbers = File.read("result.txt").split("\n").map {|number| number.to_i}
 
-# Please build a RUBY script that generates 10 distinct random numbers from 1-100 and then save them in a file called "result.txt" (one number per line).
+  #sorts the array
+  array_of_random_numbers.sort!
 
-# Please build another PHP script that reads the above file "result.txt" and outputs the minimum and maximum numbers, sorts the list and then save it in a file called "sorted.txt".
+  #finds the min and max
+  max = array_of_random_numbers.max
+  min = array_of_random_numbers.min
 
-# *step 1: Generate 10 distinct random numbers from 1-100
-# *step 2: Save them in a file "result.txt"
-# *step 3: Have a new script that opens the file
-# *step 4: Do stuff to that file
-# *step 5: Outputs to new file
+  #creates and opens sorted.txt
+  file2 = File.open("sorted.txt", "w")
 
+  #writes the max/min and sorted numbers to the file
+  file2.puts "Maximum is #{max}"
+  file2.puts "Minimum is #{min}"
 
+  array_of_random_numbers.each do |sorted_element|
+    file2.puts sorted_element
+  end
 
-array_of_random_numbers = File.read("result.txt").split("\n").map {|number| number}
-
-array_of_random_numbers = array_of_random_numbers.map { |number| number.to_i}
-array_of_random_numbers.sort!
-max = array_of_random_numbers.max
-min = array_of_random_numbers.min
-
-file2 = File.open("sorted.txt", "a")
-file2.puts "Maximum is #{max}"
-file2.puts "Minimum is #{min}"
-array_of_random_numbers.each do |sorted_element|
-  file2.puts sorted_element
-end
-
-
-
-
+  file2.close
