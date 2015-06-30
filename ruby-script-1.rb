@@ -1,3 +1,5 @@
+  #This is the Ruby version of the code challenge.
+
   #method to generate ten random unique numbers
   def generate_random_numbers
    ten_random_numbers = (1..100).to_a.shuffle.take(10)
